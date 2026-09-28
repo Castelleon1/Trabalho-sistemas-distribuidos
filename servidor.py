@@ -67,7 +67,6 @@ def iniciar_servidor():
                         break
                     conteudo.extend(dados)
 
-                # CONTEXTO DE DECISÃO NO UPLOAD: Onde guardar?
                 decisao_salvar = random.choice(['MÁQUINA_LOCAL', 'MÁQUINA_SECUNDÁRIA'])
                 
                 if decisao_salvar == 'MÁQUINA_LOCAL':
@@ -82,7 +81,6 @@ def iniciar_servidor():
                 conn.sendall(b'SUCESSO')
 
             elif comando == 'DOWNLOAD':
-                # CONTEXTO DE DECISÃO NO DOWNLOAD: De qual máquina obter?
                 caminho_local = os.path.join(PASTA_SERVIDOR, nome_arquivo)
                 
                 if os.path.exists(caminho_local):
